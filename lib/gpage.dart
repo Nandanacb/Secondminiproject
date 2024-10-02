@@ -74,7 +74,7 @@ class GpageExample extends StatelessWidget{
            
          Text("We are a leading exporter of grocery.We have a wide range of customers worldwide and offer affordable, bulk",
          
-         style: TextStyle(fontSize: 15),
+         style: TextStyle(fontSize: 20),
          maxLines: 2,
          overflow: TextOverflow.ellipsis,),
 
@@ -85,12 +85,12 @@ class GpageExample extends StatelessWidget{
                       children: [
                         Icon(Icons.currency_rupee,size: 15,),
                         Text(price
-                        ,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                        ,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 19),),
                         
-                        Text("price1",style: TextStyle(color: Colors.grey,fontSize: 15,decoration: TextDecoration.lineThrough),),
-                       Text("percentage",style: TextStyle(fontSize: 15),)
+                        Text(" 210",style: TextStyle(color: Colors.grey,fontSize: 19,decoration: TextDecoration.lineThrough),),
+                       Text(" 20",style: TextStyle(fontSize: 19),)
                        ,Icon(Icons.percent,size: 8,),
-                       Text("text",style: TextStyle(fontSize: 15),),
+                       Text(" off",style: TextStyle(fontSize: 19),),
                       
                       ],
                     ),
@@ -118,90 +118,38 @@ class GpageExample extends StatelessWidget{
                padding: const EdgeInsets.all(8.0),
                child: Row(
                  children: [
-                   GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> AddtoCartExample(imagePath: imagePath,
-                      name: name,
-                      price: price,)));
-                    },
-                     child: Container(
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),color: const Color.fromARGB(255, 97, 244, 165)),
-                      height: 30,
-                      width: 60,
-                      child: Row(
-                        children: [
-                          Text("  3.8"),
-                          Icon(Icons.star,size: 13,color: Colors.white,),
-                        ],
-                      ),
-                     ),
+                   Container(
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),color: const Color.fromARGB(255, 97, 244, 165)),
+                    height: 30,
+                    width: 60,
+                    child: Row(
+                      children: [
+                        Text("  3.8"),
+                        Icon(Icons.star,size: 13,color: Colors.white,),
+                      ],
+                    ),
                    ),
                    
                  ],
                ),
              ),
-          SizedBox(height: 20),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Container(
-                  height: 50,
-                  width:190,
-                  child: Row(
-                    children: [
-                
-                      Icon(Icons.shopping_cart),
-                      Text("Add to Cart",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                    ],
-                  ),
-                  decoration: BoxDecoration(border: Border.all(color: Colors.purple)),
-                ),
-              ),
-               
-             Spacer(),
-
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Container(
-                   height: 50,
-                  width:190,
-                  child: Row(
-                    children: [
-                
-                      Icon(Icons.keyboard_double_arrow_right,color: Colors.white,),
-                      Text("Buy Now",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-                    ],
-                  ),
-                  decoration: BoxDecoration(border: Border.all(color: Colors.purple),color: Colors.purple),
-                  
-                ),
-              ),
-            ],
-          ),
+          SizedBox(height: 30),
+         Center(
+           child: Container(
+            height: 80,
+            width: 300,
+            
+             child: ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>AddtoCartExample(imagePath: imagePath, name: name, price: price)));
+             }, child: Text("Add to Cart",style: TextStyle(fontSize: 20),)),
+           ),
+         )
 
 
         ],
       ),
 
-       bottomNavigationBar: BottomNavigationBar(
-      backgroundColor: Colors.white,
       
-      selectedItemColor: Colors.red,
-      unselectedItemColor: Colors.blue,
-    
-    showUnselectedLabels: true,
-    
-      items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.dry_cleaning),label: "Categories"),
-        BottomNavigationBarItem(icon: Icon(Icons.check_box),label: "Mall"),
-        BottomNavigationBarItem(icon: Icon(Icons.add_box_rounded),label: "My order"),
-        BottomNavigationBarItem(icon: Icon(Icons.account_box),label: "Account"),
-        
-      ],
-
-      ),
     );
 
 
