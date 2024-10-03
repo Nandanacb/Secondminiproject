@@ -134,15 +134,24 @@ class GpageExample extends StatelessWidget{
                ),
              ),
           SizedBox(height: 30),
-         Center(
-           child: Container(
-            height: 80,
-            width: 300,
-            
-             child: ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>AddtoCartExample(imagePath: imagePath, name: name, price: price)));
-             }, child: Text("Add to Cart",style: TextStyle(fontSize: 20),)),
-           ),
+         Row(
+           children: [
+             Container(
+              height: 80,
+              width: 200,
+              
+               child: ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddtoCartExample(imagePath: imagePath, name: name, price: price)));
+               }, child: Text("Add to Cart",style: TextStyle(fontSize: 20),)),
+             ),
+            Spacer(),
+             Container(
+              height: 80,
+              width: 200,
+              
+               child: ElevatedButton(onPressed: (){}, child: Text("Buy Now",style: TextStyle(fontSize: 20),)),
+             ),
+           ],
          )
 
 

@@ -32,7 +32,7 @@ class AddtoCartExample extends StatelessWidget{
               ],
             ),
           ),
-          SizedBox(height: 40,),
+          SizedBox(height: 20,),
         Container(
           height: 100,
           width: double.infinity,
@@ -64,7 +64,7 @@ class AddtoCartExample extends StatelessWidget{
                 
                     Row(
                       children: [
-                        Text("    All issues easy return",style: TextStyle(fontSize: 13),),
+                        Text("All issues easy return",style: TextStyle(fontSize: 13),),
                       ],
                     ),
                 SizedBox(height: 10,),
